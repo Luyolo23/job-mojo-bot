@@ -8,7 +8,7 @@ export function FileDrop({
 }: {
   label: string;
   hint: string;
-  fileName?: string;
+  fileName?: string | undefined;
   onFile: (file: File) => void;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
