@@ -19,7 +19,7 @@ The app is fully **stateless** — no accounts, no stored user data. Everything 
 - **AI:** [Groq API](https://groq.com) for chat, analysis, and CV rewriting
 - **Backend:** Lightweight edge function as a secure proxy to the Groq API (no database, no persistent storage)
 
-- **Live link:** https://job-mojo-h5brro81c-luyolo23s-projects.vercel.app/
+- **Live link:** https://job-mojo-bot.lovable.app
 ## Getting Started
 
 ```bash
