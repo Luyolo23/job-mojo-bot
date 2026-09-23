@@ -23,7 +23,7 @@ The app is fully **stateless** — no accounts, no stored user data. Everything 
 
 ```bash
 # Clone the repository
-git clone <repo-url>
+git clone https://github.com/Luyolo23/job-mojo-bot.git
 cd careerfit
 
 # Install dependencies
