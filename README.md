@@ -1,75 +1,55 @@
-# Career Spark AI
+# CareerFit
 
-Build an AI-powered career assistant web app called "CareerFit" (or suggest a better name).
+CareerFit is an AI-powered career assistant that helps job seekers understand how well their CV matches a specific job description — and helps them improve that match. Users upload their CV and a job posting, then chat with an AI assistant to get a match analysis, interview preparation, and a tailored version of their CV rewritten for that specific role.
 
-Important: this app must be fully stateless. No user accounts, no login, no database persistence of user data. Everything (CV text, JD text, chat history, generated CV) lives only in the browser session (React state) and is cleared on refresh. Do not use Supabase or any backend database for storing user content — the only backend need is a lightweight edge function/serverless function to securely call the LLM API without exposing the API key client-side.
+The app is fully **stateless** — no accounts, no stored user data. Everything lives in the browser session and is cleared on refresh.
 
-LLM provider: Use the Groq API (OpenAI-compatible chat completions endpoint) for all AI calls — parsing, analysis, chat, and CV rewriting. Use a fast Groq-hosted model (e.g. a Llama 3.1/3.3 instruct model) suitable for both quick chat responses and longer document rewriting. Store the Groq API key as a server-side secret used only inside the edge function, never exposed to the frontend.
+## Features
 
-Core flow:
+- 📄 **Upload your CV** (PDF, DOCX, or plain text) and a job description (upload or paste)
+- 🔍 **Match analysis** — see your match score, matched keywords, missing keywords, and quick-win suggestions
+- 💬 **AI chat assistant** — ask follow-up questions about how to position your experience for the role
+- 🎯 **Interview preparation** — likely interview questions based on the job description, with STAR-method answer suggestions drawn from your actual CV
+- ✍️ **Tailored CV generation** — get a rewritten version of your CV that emphasizes the skills and keywords the job description is looking for, downloadable as PDF or DOCX
+- 🔒 **Privacy-first** — nothing is stored server-side; your CV and job description only exist for the duration of your session
 
-User uploads their CV (PDF, DOCX, or plain text) and the job description (pasted as text or uploaded as a file).
+## Tech Stack
 
-The app extracts text from both files client-side or via the edge function (no storage — just parse and hold in memory/state).
+- **Frontend:** React + TypeScript
+- **AI:** [Groq API](https://groq.com) for chat, analysis, and CV rewriting
+- **Backend:** Lightweight edge function as a secure proxy to the Groq API (no database, no persistent storage)
 
-The user interacts with an AI chat assistant to:
+## Getting Started
 
-Get a match analysis (strengths, gaps, missing keywords, ATS compatibility)
+```bash
+# Clone the repository
+git clone <repo-url>
+cd careerfit
 
-Ask follow-up questions about positioning their experience
+# Install dependencies
+npm install
 
-Get interview prep: likely questions based on the JD, STAR-method answer suggestions using their real CV content, and questions to ask the interviewer
-
-Request a tailored CV rewritten to match the JD — same real experience, reordered/rephrased to emphasize relevant skills and keywords — downloadable as PDF or DOCX
-
-Key screens:
-
-Upload screen (CV + JD upload/paste, drag-and-drop)
-
-Analysis dashboard: match score, matched/missing keywords, quick-win suggestions
-
-Chat interface (in-session only, cleared on refresh) for interview prep and Q&A
-
-Tailored CV preview with download button (PDF/DOCX), shown side-by-side with the original
-
-Technical requirements:
-
-No backend database — all state in-memory/client-side for the session
-
-Edge/serverless function as a thin proxy to the Groq API (keeps the key server-side)
-
-Client-side PDF/DOCX text extraction where possible; fall back to a lightweight server-side parse if needed
-
-Clean, professional, trustworthy UI, mobile-responsive
-
-Nice-to-haves if feasible:
-
-Cover letter generator from the same inputs
-
-Downloadable interview prep notes as PDF
-
-Clear "your data isn't stored" messaging in the UI, since the app is stateless
-
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://job-mojo-bot.lovable.app
-**Another Link**: https://job-mojo-h5brro81c-luyolo23s-projects.vercel.app/
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/0eae4c2b-f199-4a00-87e3-035b5f61e839).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+# Start the development server
 npm run dev
 ```
+
+You'll need a Groq API key set as a `GROQ_API_KEY` secret for the AI features to work. See the project's Lovable Cloud Secrets panel or your local `.env` setup for configuration.
+
+## How It Works
+
+1. Upload your CV and the job description you're applying for
+2. The app parses both documents and generates a match analysis
+3. Chat with the AI assistant about your match, get interview prep, or ask for a tailored CV
+4. Download your tailored CV once you're happy with it
+
+## Collaborators
+
+- Luyolo Tuta
+- Mbali Mazibuko
+- Geneva Mokoena
+- Moleboheng Hlalele
+- Adriyell Lopis
+
+## Disclaimer
+
+CareerFit is a tool to assist with job applications, not a guarantee of interview or hiring outcomes. Always review AI-generated content before submitting it as part of a real application.
