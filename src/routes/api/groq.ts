@@ -39,7 +39,7 @@ export const Route = createFileRoute("/api/groq")({
             Authorization: `Bearer ${apiKey}`,
           },
           body: JSON.stringify({
-            model: "llama-3.3-70b-versatile",
+            model: "openai/gpt-oss-120b",
             messages: parsed.messages,
             temperature: parsed.temperature ?? 0.4,
             max_tokens: parsed.maxTokens ?? 4000,
