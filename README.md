@@ -53,6 +53,7 @@ Clear "your data isn't stored" messaging in the UI, since the app is stateless
 This project was built with [Lovable](https://lovable.dev).
 
 **Live app**: https://job-mojo-bot.lovable.app
+**Another Link**: https://job-mojo-h5brro81c-luyolo23s-projects.vercel.app/
 
 ## Build with Lovable
 
