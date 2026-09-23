@@ -1,6 +1,6 @@
 # CareerFit
 
-CareerFit is an AI-powered career assistant that helps job seekers understand how well their CV matches a specific job description — and helps them improve that match. Users upload their CV and a job posting, then chat with an AI assistant to get a match analysis, interview preparation, and a tailored version of their CV rewritten for that specific role.
+CareerFit is an AI-powered career assistant that helps job seekers understand how well their CV matches a specific job description and helps them improve that match. Users upload their CV and a job posting, then chat with an AI assistant to get a match analysis, interview preparation, and a tailored version of their CV rewritten for that specific role.
 
 The app is fully **stateless** — no accounts, no stored user data. Everything lives in the browser session and is cleared on refresh.
 
