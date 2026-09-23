@@ -34,7 +34,6 @@ npm install
 npm run dev
 ```
 
-You'll need a Groq API key set as a `GROQ_API_KEY` secret for the AI features to work. See the project's Lovable Cloud Secrets panel or your local `.env` setup for configuration.
 
 ## How It Works
 
